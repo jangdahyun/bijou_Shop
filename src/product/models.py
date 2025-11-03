@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from catalog.models import Category
 
@@ -44,6 +46,13 @@ class Product(models.Model):
     def sale_price(self):
         """할인 가격이 설정된 경우 그 값을, 아니면 기본 가격을 반환"""
         return self.discount_price or self.price
+
+    @property
+    def discount_rate(self) -> Decimal:
+        """할인율(%)을 반환. 할인 가격이 없으면 0"""
+        if self.discount_price and self.price:
+            return (self.price - self.discount_price) / self.price * Decimal("100")
+        return Decimal("0")
 
 
 class ProductOption(models.Model):

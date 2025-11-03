@@ -1,0 +1,206 @@
+{% load static humanize %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijou | Style for Every Moment</title>
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
+</head>
+<body class="home">
+    <header class="home__header">
+        <div class="home__header-inner">
+            <div class="home__logo">BIJOU</div>
+            <nav class="home__nav">
+                <a href="#" class="home__nav-item is-active">Recommend</a>
+                <a href="#" class="home__nav-item">New</a>
+                <a href="#" class="home__nav-item">Trend</a>
+                <a href="#" class="home__nav-item">Magazine</a>
+            </nav>
+            <div class="home__actions">
+                <button class="home__action-btn" type="button" aria-label="Search">
+                    <span class="icon icon--search"></span>
+                </button>
+                <button class="home__action-btn" type="button" aria-label="Cart">
+                    <span class="icon icon--bag"></span>
+                </button>
+                <button class="home__action-btn" type="button" aria-label="My page">
+                    <span class="icon icon--user"></span>
+                </button>
+                <button class="home__action-btn" type="button" aria-label="login">
+                    <span class="icon icon--user"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="home__main">
+        <section class="hero">
+            <div class="hero__bg" aria-hidden="true"></div>
+            <div class="hero__content">
+                <p class="hero__label">BIJOU HOT PICKS</p>
+                <h1 class="hero__title">
+                    취향을 담은<br>
+                    오늘의 스타일 추천
+                </h1>
+                <p class="hero__desc">
+                    Bijou 큐레이터가 골라낸 신상품과 트렌드 아이템을 지금 확인하세요.
+                </p>
+                <div class="hero__actions">
+                    <button class="btn btn--primary" type="button">추천 보기</button>
+                    <button class="btn btn--ghost" type="button">컬렉션 보기</button>
+                </div>
+            </div>
+            <div class="hero__slider">
+                <div class="hero__slide hero__slide--one is-active" role="img" aria-label="미니멀 룩 추천"></div>
+                <div class="hero__slide hero__slide--two" role="img" aria-label="스트릿 룩 추천"></div>
+                <div class="hero__slide hero__slide--three" role="img" aria-label="오피스 룩 추천"></div>
+                <div class="hero__slider-controls">
+                    <button class="hero__control hero__control--prev" type="button" aria-label="Previous">
+                        <span class="icon icon--arrow-left"></span>
+                    </button>
+                    <button class="hero__control hero__control--next" type="button" aria-label="Next">
+                        <span class="icon icon--arrow-right"></span>
+                    </button>
+                </div>
+                <div class="hero__dots">
+                    <button class="hero__dot is-active" type="button" aria-label="1번 슬라이드"></button>
+                    <button class="hero__dot" type="button" aria-label="2번 슬라이드"></button>
+                    <button class="hero__dot" type="button" aria-label="3번 슬라이드"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="collection">
+            <header class="section-header">
+                <div>
+                    <p class="section-header__eyebrow">COLLECTION</p>
+                    <h2 class="section-header__title">Bijou BEST</h2>
+                </div>
+                <div class="section-header__tabs" role="tablist">
+                    <button class="section-header__tab is-active" type="button" role="tab">전체</button>
+                    <button class="section-header__tab" type="button" role="tab">여성</button>
+                    <button class="section-header__tab" type="button" role="tab">남성</button>
+                    <button class="section-header__tab" type="button" role="tab">라이프</button>
+                </div>
+            </header>
+
+            <div class="product-grid" data-grid="recommend">
+                {% for product in popular_products %}
+                <article class="product-card">
+                    <div class="product-card__badge">
+                        {% if product.discount_price %}
+                            SALE
+                        {% else %}
+                            BEST
+                        {% endif %}
+                    </div>
+                    {% with image=product.primary_images.0 %}
+                    <div class="product-card__thumb" role="img" aria-label="{{ product.name }}"{% if image %} style="background-image: url('{{ image.image.url }}');"{% endif %}></div>
+                    {% endwith %}
+                    <div class="product-card__info">
+                        <p class="product-card__brand">{{ product.category.name }}</p>
+                        <h3 class="product-card__name">{{ product.name }}</h3>
+                        <div class="product-card__price">
+                            <span class="product-card__price-current">{{ product.sale_price|floatformat:0|intcomma }}원</span>
+                            {% if product.discount_price %}
+                            <span class="product-card__price-origin">{{ product.price|floatformat:0|intcomma }}원</span>
+                            {% endif %}
+                            {% if product.discount_price %}
+                            <span class="product-card__price-rate">-{{ product.discount_rate|floatformat:0 }}%</span>
+                            {% endif %}
+                        </div>
+                        <div class="product-card__meta">
+                            <span>리뷰 {{ product.review_count|intcomma }}</span>
+                            <span>판매 {{ product.sales_count|intcomma }}</span>
+                        </div>
+                    </div>
+                </article>
+                {% empty %}
+                <p class="product-grid__empty">추천 상품이 준비 중입니다.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="trend">
+            <header class="section-header">
+                <div>
+                    <p class="section-header__eyebrow">TREND</p>
+                    <h2 class="section-header__title">이번 주 스포트라이트</h2>
+                </div>
+                <a href="#" class="section-header__link">전체보기</a>
+            </header>
+            <div class="trend__list">
+                <article class="trend-card">
+                    <div class="trend-card__thumb trend-card__thumb--one" role="img" aria-label="모노톤 데일리"></div>
+                    <div class="trend-card__content">
+                        <p class="trend-card__tag">테마</p>
+                        <h3 class="trend-card__title">모노톤 데일리 무드</h3>
+                        <p class="trend-card__excerpt">심플하지만 디테일이 살아있는 모노톤 아이템으로 완성하는 감각적인 데일리룩.</p>
+                    </div>
+                </article>
+                <article class="trend-card">
+                    <div class="trend-card__thumb trend-card__thumb--two" role="img" aria-label="클린한 오피스룩"></div>
+                    <div class="trend-card__content">
+                        <p class="trend-card__tag">룩북</p>
+                        <h3 class="trend-card__title">클린한 오피스룩 제안</h3>
+                        <p class="trend-card__excerpt">깔끔한 실루엣과 포인트 액세서리로 출근길을 밝히는 오피스룩 큐레이션.</p>
+                    </div>
+                </article>
+                <article class="trend-card">
+                    <div class="trend-card__thumb trend-card__thumb--three" role="img" aria-label="휴양지 아이템"></div>
+                    <div class="trend-card__content">
+                        <p class="trend-card__tag">에디터 픽</p>
+                        <h3 class="trend-card__title">여름 휴양지 아이템</h3>
+                        <p class="trend-card__excerpt">여유로운 실루엣과 청량한 컬러의 아이템으로 완성하는 휴양지 감성.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="magazine">
+            <header class="section-header">
+                <div>
+                    <p class="section-header__eyebrow">MAGAZINE</p>
+                    <h2 class="section-header__title">Bijou Stories</h2>
+                </div>
+                <a href="#" class="section-header__link">스토리 더보기</a>
+            </header>
+            <div class="magazine__list">
+                {% for idx in "1234" %}
+                <article class="magazine-card">
+                    <div class="magazine-card__thumb magazine-card__thumb--{{ idx }}" role="img" aria-label="매거진 {{ idx }}"></div>
+                    <div class="magazine-card__content">
+                        <p class="magazine-card__tag">STORY {{ idx }}</p>
+                        <h3 class="magazine-card__title">Bijou 에디터의 시즌 인사이트</h3>
+                        <p class="magazine-card__excerpt">
+                            시즌 전략부터 스테디셀러 리마스터까지, Bijou 가 준비한 스타일 아카이브.
+                        </p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="home__footer">
+        <div class="home__footer-inner">
+            <div>
+                <span class="home__logo">BIJOU</span>
+                <p class="home__footer-desc">
+                    Bijou Co., Ltd.<br>
+                    고객센터 02-1234-5678 | 월-금 10:00-18:00 (점심 12:00-13:00)
+                </p>
+            </div>
+            <div class="home__footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">입점문의</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'home/home.js' %}"></script>
+</body>
+</html>
