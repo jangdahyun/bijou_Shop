@@ -1,0 +1,115 @@
+{% extends "admin/base.html" %}
+{% load static i18n %}
+
+{% block title %}{{ title }} | {{ site_title|default:"Bijou Admin" }}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/dashboard.css' %}">
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="{% static 'vendor/chart.umd.min.js' %}"></script>
+<script src="{% static 'admin/dashboard.js' %}" defer></script>
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} bijou-admin{% endblock %}
+
+{% block branding %}
+<div class="admin-brand">
+    <span class="admin-brand__mark">BIJOU</span>
+    <span class="admin-brand__subtitle">Commerce Control Center</span>
+</div>
+{% endblock %}
+
+{% block welcome-msg %}
+<span class="admin-welcome">
+    {% translate "Welcome," %}
+    <strong>{% firstof user.get_short_name user.get_username %}</strong>
+</span>
+{% endblock %}
+
+{% block userlinks %}
+<div class="admin-userlinks">
+    {% if site_url %}
+        <a href="{{ site_url }}" class="admin-userlinks__item" target="_blank" rel="noopener">
+            {% translate "View site" %}
+        </a>
+    {% endif %}
+    {% if user.has_usable_password %}
+        <a href="{% url 'admin:password_change' %}" class="admin-userlinks__item">
+            {% translate "Change password" %}
+        </a>
+    {% endif %}
+    <form id="logout-form" method="post" action="{% url 'admin:logout' %}" class="admin-userlinks__form">
+        {% csrf_token %}
+        <button type="submit">{% translate "Log out" %}</button>
+    </form>
+    {% include "admin/color_theme_toggle.html" %}
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}
+{% with current=request.resolver_match %}
+<nav class="admin-sidebar" aria-label="{% translate 'Main navigation' %}">
+    <ul class="admin-sidebar__list">
+        <li>
+            <a href="{% url 'admin:index' %}"
+               class="admin-sidebar__link {% if current and current.url_name == 'index' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                대시보드
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:product_product_changelist' %}"
+               class="admin-sidebar__link {% if current and current.app_name == 'product' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                상품 관리
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:common_banner_changelist' %}"
+               class="admin-sidebar__link {% if current and current.view_name == 'admin:common_banner_changelist' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                배너 관리
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:common_notice_changelist' %}"
+               class="admin-sidebar__link {% if current and current.view_name == 'admin:common_notice_changelist' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                공지 관리
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:catalog_category_changelist' %}"
+               class="admin-sidebar__link {% if current and current.view_name == 'admin:catalog_category_changelist' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                카테고리 관리
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:delivery_delivery_changelist' %}"
+               class="admin-sidebar__link {% if current and current.view_name == 'admin:delivery_delivery_changelist' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                배달 관리
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin:order_order_changelist' %}"
+               class="admin-sidebar__link {% if current and current.view_name == 'admin:order_order_changelist' %}is-active{% endif %}">
+                <span class="icon-bullet"></span>
+                주문 관리
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endwith %}
+{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block content_title %}{% if title and request.resolver_match.url_name != 'index' %}<h1>{{ title }}</h1>{% endif %}{% endblock %}

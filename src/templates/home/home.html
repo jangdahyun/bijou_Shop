@@ -1,42 +1,16 @@
+{% extends "base.html" %}
 {% load static humanize %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijou | Style for Every Moment</title>
-    <link rel="stylesheet" href="{% static 'home/home.css' %}">
-</head>
-<body class="home">
-    <header class="home__header">
-        <div class="home__header-inner">
-            <div class="home__logo">BIJOU</div>
-            <nav class="home__nav">
-                <a href="#" class="home__nav-item is-active">Recommend</a>
-                <a href="#" class="home__nav-item">New</a>
-                <a href="#" class="home__nav-item">Trend</a>
-                <a href="#" class="home__nav-item">Magazine</a>
-            </nav>
-            <div class="home__actions">
-                <button class="home__action-btn" type="button" aria-label="Search">
-                    <span class="icon icon--search"></span>
-                </button>
-                <button class="home__action-btn" type="button" aria-label="Cart">
-                    <span class="icon icon--bag"></span>
-                </button>
-                <button class="home__action-btn" type="button" aria-label="My page">
-                    <span class="icon icon--user"></span>
-                </button>
-                <button class="home__action-btn" type="button" aria-label="login">
-                    <span class="icon icon--user"></span>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <main class="home__main">
-        <section class="hero">
-            <div class="hero__bg" aria-hidden="true"></div>
+{% block title %}Bijou | Style for Every Moment{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home__main">
+    <section class="hero">
             <div class="hero__content">
                 <p class="hero__label">BIJOU HOT PICKS</p>
                 <h1 class="hero__title">
@@ -181,26 +155,9 @@
                 {% endfor %}
             </div>
         </section>
-    </main>
+</div>
+{% endblock %}
 
-    <footer class="home__footer">
-        <div class="home__footer-inner">
-            <div>
-                <span class="home__logo">BIJOU</span>
-                <p class="home__footer-desc">
-                    Bijou Co., Ltd.<br>
-                    고객센터 02-1234-5678 | 월-금 10:00-18:00 (점심 12:00-13:00)
-                </p>
-            </div>
-            <div class="home__footer-links">
-                <a href="#">회사소개</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="#">입점문의</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="{% static 'home/home.js' %}"></script>
-</body>
-</html>
+{% block extra_js %}
+<script src="{% static 'home/home.js' %}"></script>
+{% endblock %}

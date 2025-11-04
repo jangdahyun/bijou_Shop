@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Bijou | 로그인{% endblock %}
+{% block body_class %}page-login{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth">
+    <div class="auth__container">
+        <div class="auth__panel">
+            <div class="auth__panel-inner">
+                <h1 class="auth__title">Welcome back</h1>
+                <p class="auth__subtitle">계정에 로그인하고 오늘의 추천을 확인하세요.</p>
+
+                <form method="post" class="auth-form" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                    <div class="auth-form__errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                    {% endif %}
+
+                    <div class="auth-form__field">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                        {{ form.username.errors }}
+                    </div>
+
+                    <div class="auth-form__field">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
+
+                    {% if form.use_recaptcha %}
+                    <div class="auth-form__field auth-form__field--captcha">
+                        {{ form.captcha }}
+                        {{ form.captcha.errors }}
+                    </div>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn--primary auth-form__submit">
+                        로그인
+                    </button>
+                </form>
+
+                <div class="auth__meta">
+                    <span class="auth__meta-text">아직 계정이 없으신가요?</span>
+                    <a class="auth__meta-link" href="{% url 'accounts:signup' %}">회원가입</a>
+                </div>
+            </div>
+        </div>
+        <div class="auth__visual">
+            <div class="auth__visual-overlay"></div>
+            <div class="auth__visual-content">
+                <span class="auth__logo">BIJOU</span>
+                <p class="auth__visual-text">
+                    취향을 담은 오늘의 스타일 추천.<br>
+                    지금 Bijou에서 새로운 컬렉션을 만나보세요.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'accounts/login.js' %}"></script>
+{% endblock %}
