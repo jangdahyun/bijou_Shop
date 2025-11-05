@@ -205,6 +205,10 @@ LOGGING = {
             "level": "DEBUG",
             "propagate": False,
         },
+        "root": {
+            "handlers": ["daily_file", "console"],
+            "level": "INFO",
+        },
     },
 }
 

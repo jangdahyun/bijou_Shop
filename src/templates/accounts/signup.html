@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Bijou | 회원가입{% endblock %}
+{% block body_class %}page-signup{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth auth--signup">
+    <div class="auth__container">
+        <div class="auth__panel">
+            <div class="auth__panel-inner">
+                <h1 class="auth__title">Create your Bijou account</h1>
+                <p class="auth__subtitle">배송 정보와 맞춤 추천을 위해 필요한 내용을 입력해 주세요.</p>
+
+                <form method="post" class="auth-form signup-form" novalidate>
+                    {% csrf_token %}
+
+                    <div class="signup-form__grid">
+                        <section class="signup-form__section">
+                            <h2 class="signup-form__section-title">계정 정보</h2>
+
+                            <div class="auth-form__field">
+                                <label for="id_username">아이디</label>
+                                <input type="text" id="id_username" name="username" autocomplete="username" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_email">이메일</label>
+                                <input type="email" id="id_email" name="email" autocomplete="email" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_password1">비밀번호</label>
+                                <input type="password" id="id_password1" name="password1" autocomplete="new-password" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_password2">비밀번호 확인</label>
+                                <input type="password" id="id_password2" name="password2" autocomplete="new-password" required>
+                            </div>
+                        </section>
+
+                        <section class="signup-form__section">
+                            <h2 class="signup-form__section-title">회원 정보</h2>
+
+                            <div class="auth-form__field">
+                                <label for="id_name">이름</label>
+                                <input type="text" id="id_name" name="name" autocomplete="name" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_birth_date">생년월일</label>
+                                <input type="date" id="id_birth_date" name="birth_date" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_phone">휴대폰 번호</label>
+                                <input type="tel" id="id_phone" name="phone" placeholder="010-1234-5678" autocomplete="tel" required>
+                            </div>
+
+                            <div class="auth-form__field">
+                                <label for="id_address">배송지 주소</label>
+                                <input type="text" id="id_address" name="address" autocomplete="street-address" required>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="signup-form__agreements">
+                        <label class="signup-form__checkbox">
+                            <input type="checkbox" name="terms_agreed" required>
+                            <span>필수 약관에 동의합니다.</span>
+                        </label>
+                        <small class="signup-form__agreements-note">
+                            가입을 진행하면 Bijou의 약관과 개인정보 처리방침에 동의한 것으로 간주됩니다.
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary auth-form__submit">회원가입</button>
+                </form>
+
+                <div class="auth__meta">
+                    <span class="auth__meta-text">이미 계정이 있으신가요?</span>
+                    <a class="auth__meta-link" href="{% url 'accounts:login' %}">로그인으로 돌아가기</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth__visual auth__visual--signup">
+            <div class="auth__visual-overlay"></div>
+            <div class="auth__visual-content">
+                <span class="auth__logo">BIJOU</span>
+                <p class="auth__visual-text">
+                    Bijou와 함께 라이프스타일을 완성하세요.<br>
+                    오늘 가입하면 맞춤형 큐레이션과 빠른 배송을 바로 이용할 수 있습니다.
+                </p>
+                <ul class="signup-benefits">
+                    <li>신규 회원 전용 10% 웰컴 쿠폰</li>
+                    <li>취향 기반 실시간 추천 리포트</li>
+                    <li>배송 현황을 한눈에 확인할 수 있는 대시보드</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

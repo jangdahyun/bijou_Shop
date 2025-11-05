@@ -1,5 +1,6 @@
 from datetime import timedelta
 from decimal import Decimal
+import logging
 
 from django.contrib.admin import AdminSite
 from django.db.models import F, Sum
@@ -101,6 +102,7 @@ class BijouAdminSite(AdminSite):
             .annotate(total=Sum("payment_amount"))
             .order_by("day")
         )
+        logging.info("이번주 매출"+str(weekly_sales_queryset))
         #일별 매출 딕셔너리로 변환
         sales_by_day = {entry["day"]: entry["total"] for entry in weekly_sales_queryset}
         #그래프에 넘길 컨테이너
