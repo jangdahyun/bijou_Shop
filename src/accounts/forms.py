@@ -75,4 +75,13 @@ class ExtraFieldsMixin(forms.Form):
         user.save()
         return user
     
-# class SignUpForm(UserCreationForm):
+class SignUpForm(ExtraFieldsMixin,UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        fields = ("username", "email", "password1", "password2")
+    def save(self, commit: bool = True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data["email"]
+        if commit:
+            user.save()
+            self._save_extra_to_user(user)
+        return user
