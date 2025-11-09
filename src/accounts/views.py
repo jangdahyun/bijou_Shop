@@ -42,6 +42,23 @@ class SignUpView(FormView):
     form_class = SignUpForm
     success_url = reverse_lazy("home")
 
+    @staticmethod
+    def _form_initial_from_session(data):
+        if not data:
+            return None
+        initial = data.copy()
+        initial.pop("password1", None)
+        initial.pop("password2", None)
+        initial["terms_agreed"] = True
+        return initial
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.setdefault("verification_form", VerificationForm())
+        context.setdefault("show_verification", False)
+        context.setdefault("verification_passed", False)
+        return context
+
     def post(self, request, *args, **kwargs):
         action = request.POST.get("action")
         if action == "send_code":
@@ -50,6 +67,9 @@ class SignUpView(FormView):
         elif action == "verify_code":
             logger.debug("회원가입 POST - 인증번호 검증 요청 수신")
             return self.handle_verify_code(request)
+        elif action == "complete_signup":
+            logger.debug("회원가입 POST - 가입 완료 요청 수신")
+            return self.handle_complete_signup(request)
         return super().post(request, *args, **kwargs)
         
     def handle_send_code(self, request):
@@ -64,13 +84,19 @@ class SignUpView(FormView):
             "code_hash": _hash_code(code),
             "expires": (timezone.now() + timedelta(minutes=5)).isoformat(), #만료 시간
             "tries": 0, #시도 횟수
+            "verified": False,
         }
         save_signup_session(request, payload)
         logger.info("세션에 인증 정보 저장 - email=%s", form.cleaned_data.get("email"))
         send_mail("Bijou 인증번호", f"인증번호: {code}", settings.DEFAULT_FROM_EMAIL, [form.cleaned_data["email"]])
         logger.info("인증 이메일 발송 완료 - email=%s", form.cleaned_data.get("email"))
         messages.info(request, "이메일로 인증번호를 보냈습니다.")
-        ctx = self.get_context_data(form=form, show_verification=True, verification_form=VerificationForm())
+        ctx = self.get_context_data(
+            form=form,
+            show_verification=True,
+            verification_form=VerificationForm(),
+            verification_passed=False,
+        )
         return self.render_to_response(ctx)
     
     def handle_verify_code(self, request):
@@ -80,7 +106,7 @@ class SignUpView(FormView):
             messages.error(request, "먼저 인증번호를 요청해 주세요.")
             return redirect("accounts:signup")
 
-        signup_form = SignUpForm(initial=session_data["data"])
+        signup_form = SignUpForm(initial=self._form_initial_from_session(session_data["data"]))
         verification_form = VerificationForm(request.POST)
 
         if not verification_form.is_valid():
@@ -131,6 +157,34 @@ class SignUpView(FormView):
                 form=signup_form,
                 show_verification=True,
                 verification_form=verification_form,
+                verification_passed=False,
+            )
+            return self.render_to_response(ctx)
+
+        session_data["verified"] = True
+        save_signup_session(request, session_data)
+        messages.success(request, "이메일 인증이 완료되었습니다. 회원가입 버튼을 눌러 마무리해 주세요.")
+        logger.info("이메일 인증 성공 - email=%s", session_data["data"].get("email"))
+        ctx = self.get_context_data(
+            form=signup_form,
+            show_verification=True,
+            verification_form=VerificationForm(),
+            verification_passed=True,
+        )
+        return self.render_to_response(ctx)
+
+    def handle_complete_signup(self, request):
+        session_data = get_signup_session(request)
+        if not session_data or not session_data.get("verified"):
+            logger.warning("인증 완료 전 가입 시도")
+            messages.error(request, "이메일 인증을 먼저 완료해 주세요.")
+            form_initial = self._form_initial_from_session(session_data["data"]) if session_data else None
+            form = SignUpForm(initial=form_initial)
+            ctx = self.get_context_data(
+                form=form,
+                show_verification=bool(session_data),
+                verification_form=VerificationForm(),
+                verification_passed=bool(session_data and session_data.get("verified")),
             )
             return self.render_to_response(ctx)
 

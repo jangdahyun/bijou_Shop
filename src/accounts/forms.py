@@ -60,7 +60,7 @@ def normalize_phone(raw: str) -> str:
         return digits
 
 class ExtraFieldsMixin(forms.Form):
-    username = forms.CharField(label="아이디", max_length=150, required=True)
+    username = forms.CharField(label="닉네임", max_length=150, required=True)
     name = forms.CharField(label="이름", max_length=50, required=True)
     email = forms.EmailField(label="이메일", required=True)
     phone = forms.CharField(label="휴대폰 번호", max_length=16, required=True,
