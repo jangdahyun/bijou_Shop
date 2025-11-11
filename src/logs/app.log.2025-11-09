@@ -1,0 +1,171 @@
+2025-11-09 12:20:47 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-09 12:20:47 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-09 12:20:47 [INFO] django.utils.autoreload:667 Watching for file changes with StatReloader
+2025-11-09 12:21:11 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-09 12:21:11 [INFO] django.server:213 "GET /static/common/base.css HTTP/1.1" 304 0
+2025-11-09 12:21:11 [INFO] django.server:213 "GET /static/home/home.css HTTP/1.1" 304 0
+2025-11-09 12:21:11 [INFO] django.server:213 "GET /static/home/home.js HTTP/1.1" 304 0
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:11 [WARNING] django.request:253 Not Found: /favicon.ico
+2025-11-09 12:21:11 [WARNING] django.server:213 "GET /favicon.ico HTTP/1.1" 404 2516
+2025-11-09 12:21:14 [INFO] axes.handlers.database:387 AXES: Cleaned up 0 expired access attempts from database that were older than 2025-11-09 03:16:14.646364+00:00
+2025-11-09 12:21:14 [INFO] axes.handlers.database:318 AXES: Successful logout by {username: "********************", ip_address: "********************", user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36", path_info: "/accounts/logout/"}.
+2025-11-09 12:21:14 [INFO] django.server:213 "POST /accounts/logout/ HTTP/1.1" 302 0
+2025-11-09 12:21:14 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-09 12:21:14 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:14 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:21:16 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-09 12:21:16 [INFO] django.server:213 "GET /static/accounts/login.js HTTP/1.1" 304 0
+2025-11-09 12:21:16 [INFO] django.server:213 "GET /static/accounts/login.css HTTP/1.1" 304 0
+2025-11-09 12:21:18 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8427
+2025-11-09 12:21:18 [INFO] django.server:213 "GET /static/accounts/signup.css HTTP/1.1" 304 0
+2025-11-09 12:21:33 [DEBUG] accounts.views:65 회원가입 POST - 인증번호 발송 요청 수신
+2025-11-09 12:21:33 [INFO] accounts.views:78 회원가입 폼 검증 실패: <ul class="errorlist"><li>email<ul class="errorlist" id="id_email_error"><li>올바른 이메일 주소를 입력하세요.</li></ul></li><li>phone<ul class="errorlist" id="id_phone_error"><li>필수 항목입니다.</li></ul></li><li>birth_date<ul class="errorlist" id="id_birth_date_error"><li>필수 항목입니다.</li></ul></li><li>address<ul class="errorlist" id="id_address_error"><li>필수 항목입니다.</li></ul></li><li>password1<ul class="errorlist" id="id_password1_error"><li>필수 항목입니다.</li></ul></li><li>password2<ul class="errorlist" id="id_password2_error"><li>필수 항목입니다.</li></ul></li></ul>
+2025-11-09 12:21:33 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:21:36 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:21:43 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:21:43 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:24:16 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:24:16 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:24:16 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:24:17 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:24:17 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:24:17 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:24:20 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:24:20 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:24:20 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:24:23 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9331
+2025-11-09 12:24:23 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:24:23 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:15 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9810
+2025-11-09 12:27:15 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:27:15 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:15 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:15 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9810
+2025-11-09 12:27:15 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:15 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:27:15 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:17 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:17 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:20 [WARNING] django.request:253 Not Found: /accounts
+2025-11-09 12:27:20 [WARNING] django.server:213 "GET /accounts HTTP/1.1" 404 2507
+2025-11-09 12:27:20 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:20 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:23 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:23 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [INFO] axes.handlers.database:387 AXES: Cleaned up 0 expired access attempts from database that were older than 2025-11-09 03:22:24.728855+00:00
+2025-11-09 12:27:24 [INFO] axes.handlers.database:318 AXES: Successful logout by {username: "********************", ip_address: "********************", user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36", path_info: "/accounts/logout/"}.
+2025-11-09 12:27:24 [INFO] django.server:213 "POST /accounts/logout/ HTTP/1.1" 302 0
+2025-11-09 12:27:24 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-09 12:27:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-09 12:27:25 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-09 12:27:25 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:25 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:27:28 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-09 12:27:28 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:27:28 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:27:28 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:32:06 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-09 12:32:06 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:32:06 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:32:06 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:32:06 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-09 12:32:06 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:32:06 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:32:06 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:32:07 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-09 12:32:07 [WARNING] accounts.views:179 인증 완료 전 가입 시도
+2025-11-09 12:32:07 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9140
+2025-11-09 12:32:07 [WARNING] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 404 1868
+2025-11-09 12:32:07 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:32:07 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:33:52 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-09 12:33:52 [WARNING] accounts.views:179 인증 완료 전 가입 시도
+2025-11-09 12:33:52 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9140
+2025-11-09 12:33:52 [INFO] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 200 797
+2025-11-09 12:33:52 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:33:52 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-09 12:33:54 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-09 12:33:54 [WARNING] accounts.views:179 인증 완료 전 가입 시도
+2025-11-09 12:33:54 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9140
+2025-11-09 12:33:54 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-09 12:33:54 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
