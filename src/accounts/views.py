@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
 from django.contrib.auth import views as auth_views
 from django.core.mail import send_mail
 from django.shortcuts import redirect
@@ -189,7 +189,16 @@ class SignUpView(FormView):
             return self.render_to_response(ctx)
 
         user = SignUpForm.create_user_from_payload(session_data["data"])
-        login(request, user)
+        auth_user = authenticate(
+            request,
+            username=user.username,
+            password=session_data["data"]["password1"],
+        )
+        if auth_user is None:
+            logger.error("자동 로그인 실패 - username=%s", user.username)
+            messages.error(request, "자동 로그인을 진행할 수 없습니다. 직접 로그인해 주세요.")
+            return redirect("accounts:login")
+        login(request, auth_user)
         clear_signup_session(request)
         logger.info("회원가입 완료 및 자동 로그인 - username=%s", user.username)
         messages.success(request, "회원가입이 완료되었습니다.")

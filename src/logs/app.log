@@ -1,2 +1,449 @@
-2025-11-11 20:26:03 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
-2025-11-11 20:27:54 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 20:55:17 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 20:55:17 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 20:55:17 [INFO] django.utils.autoreload:667 Watching for file changes with StatReloader
+2025-11-13 20:55:35 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-13 20:55:35 [INFO] django.server:213 "GET /static/common/base.css HTTP/1.1" 304 0
+2025-11-13 20:55:35 [INFO] django.server:213 "GET /static/home/home.css HTTP/1.1" 304 0
+2025-11-13 20:55:35 [INFO] django.server:213 "GET /static/home/home.js HTTP/1.1" 304 0
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-13 20:55:35 [WARNING] django.request:253 Not Found: /favicon.ico
+2025-11-13 20:55:35 [WARNING] django.server:213 "GET /favicon.ico HTTP/1.1" 404 2516
+2025-11-13 20:55:37 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-13 20:55:37 [INFO] django.server:213 "GET /static/accounts/login.css HTTP/1.1" 304 0
+2025-11-13 20:55:37 [INFO] django.server:213 "GET /static/accounts/login.js HTTP/1.1" 304 0
+2025-11-13 20:55:39 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-13 20:55:39 [INFO] django.server:213 "GET /static/accounts/signup.css HTTP/1.1" 304 0
+2025-11-13 20:55:39 [INFO] django.server:213 "GET /static/accounts/signup.js HTTP/1.1" 304 0
+2025-11-13 20:56:49 [DEBUG] accounts.views:65 회원가입 POST - 인증번호 발송 요청 수신
+2025-11-13 20:56:49 [DEBUG] accounts.views:81 인증번호 생성 완료 - email=wldwld991@naver.com
+2025-11-13 20:56:49 [INFO] accounts.views:90 세션에 인증 정보 저장 - email=wldwld991@naver.com
+2025-11-13 20:56:49 [INFO] accounts.views:92 인증 이메일 발송 완료 - email=wldwld991@naver.com
+2025-11-13 20:56:49 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 10175
+2025-11-13 20:57:33 [DEBUG] accounts.views:68 회원가입 POST - 인증번호 검증 요청 수신
+2025-11-13 20:57:33 [INFO] accounts.views:167 이메일 인증 성공 - email=wldwld991@naver.com
+2025-11-13 20:57:33 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9807
+2025-11-13 20:57:37 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-13 20:57:37 [ERROR] django.request:253 Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.IntegrityError: (1048, "Column 'birth_date' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 72, in post
+    return self.handle_complete_signup(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 191, in handle_complete_signup
+    user = SignUpForm.create_user_from_payload(session_data["data"])
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/forms.py", line 163, in create_user_from_payload
+    user = User.objects.create_user(
+        username=data["username"],
+        email=data["email"],
+        password=data["password1"],
+    )
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/models.py", line 9, in create_user
+    return super().create_user(username, email, password, **extra_fields)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/models.py", line 175, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/models.py", line 163, in _create_user
+    user.save(using=self._db)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/models.py", line 57, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: (1048, "Column 'birth_date' cannot be null")
+2025-11-13 20:57:37 [ERROR] django.server:213 "POST /accounts/signup/ HTTP/1.1" 500 232953
+2025-11-13 21:06:51 [INFO] django.utils.autoreload:265 /Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/forms.py changed, reloading.
+2025-11-13 21:06:51 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 21:06:51 [INFO] django.utils.autoreload:667 Watching for file changes with StatReloader
+2025-11-13 21:08:25 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:25 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-13 21:08:25 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:08:27 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-13 21:08:39 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-13 21:08:59 [DEBUG] accounts.views:65 회원가입 POST - 인증번호 발송 요청 수신
+2025-11-13 21:08:59 [DEBUG] accounts.views:81 인증번호 생성 완료 - email=wldwld991@naver.com
+2025-11-13 21:08:59 [INFO] accounts.views:90 세션에 인증 정보 저장 - email=wldwld991@naver.com
+2025-11-13 21:08:59 [INFO] accounts.views:92 인증 이메일 발송 완료 - email=wldwld991@naver.com
+2025-11-13 21:08:59 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 10175
+2025-11-13 21:09:10 [WARNING] django.request:253 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2025-11-13 21:09:10 [WARNING] django.server:213 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2627
+2025-11-13 21:09:28 [DEBUG] accounts.views:68 회원가입 POST - 인증번호 검증 요청 수신
+2025-11-13 21:09:28 [INFO] accounts.views:167 이메일 인증 성공 - email=wldwld991@naver.com
+2025-11-13 21:09:28 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9807
+2025-11-13 21:09:30 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-13 21:09:30 [ERROR] django.request:253 Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 57, in _get_backend_from_user
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'Account' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 72, in post
+    return self.handle_complete_signup(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 192, in handle_complete_signup
+    login(request, user)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 189, in login
+    backend = _get_backend_from_user(user=user, backend=backend)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py", line 63, in _get_backend_from_user
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+2025-11-13 21:09:30 [ERROR] django.server:213 "POST /accounts/signup/ HTTP/1.1" 500 104756
+2025-11-13 21:13:57 [INFO] django.utils.autoreload:265 /Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py changed, reloading.
+2025-11-13 21:13:58 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 21:13:58 [INFO] django.utils.autoreload:667 Watching for file changes with StatReloader
+2025-11-13 21:15:42 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:42 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-13 21:15:42 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:15:44 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-13 21:15:46 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-13 21:16:08 [DEBUG] accounts.views:65 회원가입 POST - 인증번호 발송 요청 수신
+2025-11-13 21:16:08 [DEBUG] accounts.views:81 인증번호 생성 완료 - email=wldwld9912@naver.com
+2025-11-13 21:16:08 [INFO] accounts.views:90 세션에 인증 정보 저장 - email=wldwld9912@naver.com
+2025-11-13 21:16:08 [INFO] accounts.views:92 인증 이메일 발송 완료 - email=wldwld9912@naver.com
+2025-11-13 21:16:08 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 10178
+2025-11-13 21:16:14 [DEBUG] accounts.views:68 회원가입 POST - 인증번호 검증 요청 수신
+2025-11-13 21:16:14 [INFO] accounts.views:167 이메일 인증 성공 - email=wldwld9912@naver.com
+2025-11-13 21:16:14 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9810
+2025-11-13 21:16:18 [DEBUG] accounts.views:71 회원가입 POST - 가입 완료 요청 수신
+2025-11-13 21:16:18 [ERROR] django.request:253 Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.IntegrityError: (1062, "Duplicate entry '01075151154' for key 'accounts_account.phone'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 72, in post
+    return self.handle_complete_signup(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/views.py", line 191, in handle_complete_signup
+    user = SignUpForm.create_user_from_payload(session_data["data"])
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/forms.py", line 168, in create_user_from_payload
+    ExtraFieldsMixin._save_extra_to_user(user, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/forms.py", line 117, in _save_extra_to_user
+    user.save()
+    ~~~~~~~~~^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/models.py", line 57, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/contrib/auth/base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/Users/neogueuli/Desktop/프로젝트/bijou/.venv/lib/python3.13/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: (1062, "Duplicate entry '01075151154' for key 'accounts_account.phone'")
+2025-11-13 21:16:18 [ERROR] django.server:213 "POST /accounts/signup/ HTTP/1.1" 500 225873
+2025-11-13 21:28:00 [INFO] django.utils.autoreload:265 /Users/neogueuli/Desktop/프로젝트/bijou/src/accounts/forms.py changed, reloading.
+2025-11-13 21:28:00 [INFO] axes.apps:53 AXES: BEGIN version 8.0.0, blocking by ip_address
+2025-11-13 21:28:00 [INFO] django.utils.autoreload:667 Watching for file changes with StatReloader
+2025-11-13 21:28:19 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:20 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-13 21:28:20 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [INFO] axes.handlers.database:387 AXES: Cleaned up 0 expired access attempts from database that were older than 2025-11-13 12:23:24.748579+00:00
+2025-11-13 21:28:24 [INFO] axes.handlers.database:318 AXES: Successful logout by {username: "********************", ip_address: "********************", user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36", path_info: "/accounts/logout/"}.
+2025-11-13 21:28:24 [INFO] django.server:213 "POST /accounts/logout/ HTTP/1.1" 302 0
+2025-11-13 21:28:24 [INFO] django.server:213 "GET / HTTP/1.1" 200 23195
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_33_0.jpg
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_25_0.jpg
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_43_0.jpg
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_39_0.jpg
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_25_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_33_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_34_0.jpg
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_43_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_39_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_35_0.jpg
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_42_0.jpg
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_30_0.jpg
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_34_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_48_0.jpg
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_35_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.request:253 Not Found: /media/products/2025/11/demo_45_0.jpg
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_42_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_30_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_48_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:24 [WARNING] django.server:213 "GET /media/products/2025/11/demo_45_0.jpg HTTP/1.1" 404 2591
+2025-11-13 21:28:26 [INFO] django.server:213 "GET /accounts/login/ HTTP/1.1" 200 4687
+2025-11-13 21:28:28 [INFO] django.server:213 "GET /accounts/signup/ HTTP/1.1" 200 8906
+2025-11-13 21:29:00 [DEBUG] accounts.views:65 회원가입 POST - 인증번호 발송 요청 수신
+2025-11-13 21:29:00 [INFO] accounts.views:78 회원가입 폼 검증 실패: <ul class="errorlist"><li>phone<ul class="errorlist" id="id_phone_error"><li>이미 사용 중인 전화번호입니다.</li></ul></li><li>__all__<ul class="errorlist nonfield"><li>비밀번호가 일치하지 않습니다.</li></ul></li></ul>
+2025-11-13 21:29:00 [INFO] django.server:213 "POST /accounts/signup/ HTTP/1.1" 200 9279

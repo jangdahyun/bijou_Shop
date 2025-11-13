@@ -75,6 +75,8 @@ class ExtraFieldsMixin(forms.Form):
         phone = normalize_phone(self.cleaned_data.get("phone", ""))
         if not phone:
             raise ValidationError("전화번호를 입력해 주세요.")
+        if User.objects.filter(phone=phone).exists():
+            raise ValidationError("이미 사용 중인 전화번호입니다.")
         return phone
     
     def clean_username(self):
@@ -160,11 +162,11 @@ class SignUpForm(ExtraFieldsMixin):
     def create_user_from_payload(data):
         """Create and persist a user from stored signup data."""
         data = data or {}
-        user = User.objects.create_user(
+        user = User(
             username=data["username"],
             email=data["email"],
-            password=data["password1"],
         )
+        user.set_password(data["password1"])
         ExtraFieldsMixin._save_extra_to_user(user, data)
         return user
 
