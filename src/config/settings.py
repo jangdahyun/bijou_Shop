@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django_recaptcha',
     #로그인 시도 제한
     'axes',
+    #IP 및 요청 빈도 제한
+    'django_ratelimit'
 ]
 
 MIDDLEWARE = [
@@ -232,3 +234,12 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
 EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=True)
 EMAIL_TIMEOUT = env.int("EMAIL_TIMEOUT", default=10)
+
+
+#------------------- 캐시 설정 -------------------#
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+    }
+}

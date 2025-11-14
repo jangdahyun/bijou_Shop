@@ -13,6 +13,9 @@ from django.utils import timezone
 from django.utils.crypto import constant_time_compare
 from django.views.generic import FormView
 
+from django.utils.decorators import method_decorator
+from django_ratelimit.decorators import ratelimit
+
 logger = logging.getLogger(__name__)
 
 from .forms import (
@@ -26,6 +29,7 @@ from .forms import (
 )
 
 # Django 기본 인증 뷰를 상속하여 커스터마이징
+@method_decorator(ratelimit(key="ip", rate="5/m", method="POST", block=True), name="dispatch")
 class LoginView(auth_views.LoginView):
     template_name = "accounts/login.html"
     form_class = LoginForm
