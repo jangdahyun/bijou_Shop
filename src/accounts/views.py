@@ -29,12 +29,19 @@ from .forms import (
 )
 
 # Django 기본 인증 뷰를 상속하여 커스터마이징
-@method_decorator(ratelimit(key="ip", rate="5/m", method="POST", block=True), name="dispatch")
+@method_decorator(ratelimit(key="ip", rate="5/m", method="POST", block=False), name="dispatch")
 class LoginView(auth_views.LoginView):
     template_name = "accounts/login.html"
     form_class = LoginForm
     # 중복 로그인 방지
     redirect_authenticated_user = True
+    
+    def dispatch(self, request, *args, **kwargs):
+        if getattr(request, "limited", False):
+            logger.warning("로그인 시도 과다 - IP: %s", request.META.get("REMOTE_ADDR"))
+            messages.error(request, "로그인 시도가 너무 많습니다. 잠시 후 다시 시도해 주세요.")
+            return self.get(request, *args, **kwargs)
+        return super().dispatch(request, *args, **kwargs)
 
 
 class LogoutView(auth_views.LogoutView):

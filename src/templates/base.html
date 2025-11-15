@@ -40,6 +40,15 @@
             </div>
         </div>
     </header>
+    {% if messages %}
+    <section class="site-messages">
+        {% for message in messages %}
+            <div class="site-message site-message--{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </section>
+    {% endif %}
 
     <main class="site-main">
         {% block content %}{% endblock %}
