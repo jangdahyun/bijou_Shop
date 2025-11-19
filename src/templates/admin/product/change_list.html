@@ -1,0 +1,73 @@
+{% extends "admin/change_list.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/product_dashboard20251119.css' %}">
+{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block content %}
+<div class="product-page">
+    {% if dashboard %}
+    <section class="product-dashboard">
+        <header class="product-dashboard__header">
+            <div>
+                <p class="product-dashboard__subtitle">{% translate "상품 재고 · 판매 요약" %}</p>
+                <h1 class="product-dashboard__title">{% translate "변경할 product 선택" %}</h1>
+            </div>
+        </header>
+        <div class="product-dashboard__metrics">
+            {% for card in dashboard.cards %}
+            <article class="product-card">
+                <div class="product-card__icon">
+                    <span>{{ forloop.counter }}</span>
+                </div>
+                <div class="product-card__body">
+                    <p class="product-card__label">{{ card.label }}</p>
+                    <p class="product-card__value">{{ card.value|default:0 }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="product-dashboard__lists">
+            <div class="inventory-list">
+                <h3>{% translate "재고 현황" %}</h3>
+                <p class="inventory-list__summary">
+                    {% blocktrans %}총 재고{% endblocktrans %} <strong>{{ dashboard.inventory.total_stock|default:0 }}</strong>
+                    <span class="dot"></span>
+                    {% blocktrans %}누적 판매{% endblocktrans %} <strong>{{ dashboard.inventory.total_sales|default:0 }}</strong>
+                </p>
+                <ul>
+                    {% for product in dashboard.inventory.low_stock_products %}
+                    <li>
+                        <span>{{ product.name }}</span>
+                        <span class="badge badge--warning">{{ product.stock }}{% translate "개" %}</span>
+                    </li>
+                    {% empty %}
+                    <li class="empty">{% translate "재고 부족 상품이 없습니다." %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="top-seller-list">
+                <h3>{% translate "주요 판매 상품" %}</h3>
+                <ul>
+                    {% for product in dashboard.top_sellers %}
+                    <li>
+                        <span>{{ product.name }}</span>
+                        <span class="badge badge--primary">{{ product.sales_count }}{% translate "건" %}</span>
+                    </li>
+                    {% empty %}
+                    <li class="empty">{% translate "판매 데이터가 없습니다." %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <div class="product-table-wrapper">
+        {{ block.super }}
+    </div>
+</div>
+{% endblock %}

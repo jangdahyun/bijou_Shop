@@ -6,6 +6,7 @@ from django.contrib.admin import AdminSite
 from django.db.models import F, Sum
 from django.db.models.functions import TruncDate
 from django.utils import timezone
+from django.shortcuts import redirect
 
 from accounts.models import Account
 from order.models import Order, OrderItem
@@ -29,6 +30,7 @@ class BijouAdminSite(AdminSite):
             context.update(self._build_dashboard_context())
         #템플릿에 값 전달
         return context
+    
     #일반함수처럼 쓰기 위해서, staticmethod 데코레이터 사용, self 인자 제거
     @staticmethod
     def count_active_sessions():

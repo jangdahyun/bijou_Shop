@@ -17,7 +17,7 @@ class ProductImageInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    change_list_template = "admin/product/product/change_list.html"
+    change_list_template = "admin/product/change_list.html"
     list_display = (
         "thumbnail_preview",
         "name",
