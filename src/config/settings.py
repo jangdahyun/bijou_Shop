@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'accounts',
     'catalog',
-    'product',
+    'product.apps.ProductConfig',
     'cart',
     'notifications',
     'order',
@@ -243,3 +243,8 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379/1",
     }
 }
+
+#------------------- 검색 설정(Meilisearch) -------------------#
+MEILI_URL = env("MEILI_URL", default="")
+MEILI_API_KEY = env("MEILI_API_KEY", default="")
+MEILI_PRODUCT_INDEX = env("MEILI_PRODUCT_INDEX", default="products")

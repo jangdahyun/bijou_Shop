@@ -1,14 +1,35 @@
-/* Product admin dashboard styles mirroring main dashboard theme */
+/* Product admin dashboard responsive layout (2025-11-21) */
+
+body.bijou-admin .main > .content {
+    max-width: 100%;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+body.change-list {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+body.change-list #content {
+    padding: clamp(24px, 4vw, 40px);
+    background: transparent;
+}
+
+body.change-list #content-main {
+    padding: 0;
+    width: 100%;
+}
 
 .product-page {
-    max-width: 1180px;
     width: 100%;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 0 clamp(16px, 4vw, 32px);
+    padding: 0 clamp(12px, 3vw, 24px);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 32px;
-    box-sizing: border-box;
 }
 
 .product-dashboard {
@@ -16,7 +37,6 @@
     flex-direction: column;
     gap: 28px;
     color: var(--color-text);
-    width: 100%;
 }
 
 .product-dashboard__header {
@@ -27,8 +47,7 @@
 
 .product-dashboard__title {
     margin: 0;
-    font-size: 30px;
-    letter-spacing: 0.02em;
+    font-size: clamp(24px, 4vw, 32px);
 }
 
 .product-dashboard__subtitle {
@@ -39,16 +58,16 @@
 
 .product-dashboard__metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .product-card {
-    background: linear-gradient(160deg, rgba(33, 36, 42, 0.9), rgba(23, 25, 30, 0.95));
+    background: var(--color-surface);
     border-radius: var(--radius-md);
-    padding: 22px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: var(--shadow-lg);
+    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -64,38 +83,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
-}
-
-.product-card__body {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
 }
 
 .product-card__label {
-    font-size: 0.85rem;
-    color: var(--color-text-sub);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
 }
 
 .product-card__value {
-    font-size: 2.1rem;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-weight: 700;
     color: var(--color-text);
 }
 
 .product-dashboard__lists {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .inventory-list,
 .top-seller-list {
-    background: linear-gradient(165deg, rgba(23, 25, 30, 0.95), rgba(14, 16, 19, 0.9));
+    background: var(--color-surface);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: var(--shadow-lg);
     padding: 24px;
     display: flex;
@@ -103,31 +115,24 @@
     gap: 18px;
 }
 
-.inventory-list h3,
-.top-seller-list h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--color-text);
-}
-
 .inventory-list__summary {
-    font-size: 0.95rem;
-    color: var(--color-text-sub);
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
+    color: var(--color-text-sub);
+    font-size: 0.95rem;
 }
 
 .inventory-list__summary strong {
-    font-size: 1.1rem;
     color: var(--color-primary);
 }
 
 .inventory-list__summary .dot {
     width: 6px;
     height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .inventory-list ul,
@@ -143,8 +148,8 @@
 .inventory-list li,
 .top-seller-list li {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--color-text);
@@ -153,11 +158,6 @@
 .inventory-list li:last-child,
 .top-seller-list li:last-child {
     border-bottom: none;
-}
-
-.inventory-list li.empty,
-.top-seller-list li.empty {
-    color: var(--color-text-muted);
 }
 
 .badge {
@@ -170,7 +170,7 @@
 }
 
 .badge--warning {
-    background: rgba(240, 78, 55, 0.22);
+    background: rgba(240, 78, 55, 0.2);
     color: #ffb4a0;
 }
 
@@ -179,88 +179,12 @@
     color: var(--color-primary);
 }
 
-/* Thumbnail + status badges */
-.admin-thumb {
-    display: inline-block;
-    width: 54px;
-    height: 54px;
-    border-radius: var(--radius-sm);
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
-}
-
-.admin-thumb--empty {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: var(--radius-sm);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    color: var(--color-text-muted);
-    font-size: 0.75rem;
-}
-
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 14px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #fff;
-    min-width: 64px;
-}
-
-.status-badge--success {
-    background: rgba(5, 150, 105, 0.9);
-}
-
-.status-badge--warning {
-    background: rgba(217, 119, 6, 0.9);
-}
-
-.status-badge--danger {
-    background: rgba(220, 38, 38, 0.9);
-}
-
-/* Change list layout */
-body.change-list {
-    background: var(--color-bg);
-    color: var(--color-text);
-}
-
-body.change-list #content {
-    padding: clamp(24px, 4vw, 40px) 0;
-    background: transparent;
-}
-
-body.change-list #content-main {
-    padding: 0;
-    width: 100%;
-}
-
-body.change-list #changelist-form {
-    background: transparent;
-}
-
-body.change-list .actions {
-    background: transparent;
-    border: none;
-    padding: 0;
-    color: var(--color-text-sub);
-}
-
 body.change-list .product-table-wrapper {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.04);
     box-shadow: var(--shadow-lg);
-    padding: 28px clamp(20px, 4vw, 32px);
-    overflow-x: auto;
+    padding: 28px clamp(16px, 3vw, 32px);
     width: 100%;
     box-sizing: border-box;
 }
@@ -269,7 +193,6 @@ body.change-list table#result_list {
     border-collapse: separate;
     border-spacing: 0 14px;
     width: 100%;
-    min-width: 720px;
     color: var(--color-text);
 }
 
@@ -280,10 +203,6 @@ body.change-list table#result_list thead th {
     font-size: 0.72rem;
     border: none;
     padding-bottom: 12px;
-}
-
-body.change-list table#result_list tbody tr {
-    background: transparent;
 }
 
 body.change-list table#result_list tbody td {
@@ -334,20 +253,26 @@ body.change-list table#result_list td.field-created_at {
     font-size: 0.85rem;
 }
 
-/* Responsive tweaks */
+body.change-list .actions {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--color-text-sub);
+}
+
 @media (max-width: 1024px) {
     .product-dashboard__metrics {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 
     .product-dashboard__lists {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     .product-page {
-        padding: 0 clamp(12px, 5vw, 24px);
+        padding: 0 clamp(10px, 6vw, 18px);
         gap: 24px;
     }
 
@@ -360,20 +285,20 @@ body.change-list table#result_list td.field-created_at {
     .product-dashboard__lists {
         grid-template-columns: 1fr;
     }
+
 }
 
 @media (max-width: 640px) {
-    body.change-list table#result_list {
-        min-width: 600px;
+    body.change-list .product-table-wrapper {
+        padding: 20px 14px;
+    }
+
+    .inventory-list,
+    .top-seller-list {
+        padding: 20px;
     }
 
     body.change-list table#result_list thead th {
         font-size: 0.65rem;
     }
-}
-
-body.bijou-admin .main > .content {
-    max-width: 100%;
-    flex: 1 1 auto;
-    width: 100%;
 }

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}상품 검색{% endblock %}
+{% block content %}
+<section class="search-page">
+    <h1>상품 검색</h1>
+    <form method="get" class="search-form">
+        <input type="text" name="q" value="{{ q }}" placeholder="검색어 입력" />
+        <input type="text" name="category" value="{{ category }}" placeholder="카테고리 slug" />
+        <input type="text" name="min_price" value="{{ min_price }}" placeholder="최소 가격" />
+        <input type="text" name="max_price" value="{{ max_price }}" placeholder="최대 가격" />
+        <select name="sort">
+            <option value="created_at:desc" {% if sort == "created_at:desc" %}selected{% endif %}>신상품순</option>
+            <option value="sales_count:desc" {% if sort == "sales_count:desc" %}selected{% endif %}>인기(판매)순</option>
+            <option value="view_count:desc" {% if sort == "view_count:desc" %}selected{% endif %}>조회순</option>
+            <option value="review_count:desc" {% if sort == "review_count:desc" %}selected{% endif %}>리뷰순</option>
+            <option value="discount_rate:desc" {% if sort == "discount_rate:desc" %}selected{% endif %}>할인율순</option>
+            <option value="price:asc" {% if sort == "price:asc" %}selected{% endif %}>낮은 가격순</option>
+            <option value="price:desc" {% if sort == "price:desc" %}selected{% endif %}>높은 가격순</option>
+        </select>
+        <button type="submit">검색</button>
+    </form>
+    <p>{{ nb_hits }}건 검색됨</p>
+    <div class="search-results">
+        {% for item in results %}
+            <article class="search-card">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.category }} | ₩{{ item.price }}{% if item.discount_price %} → ₩{{ item.discount_price }}{% endif %}</p>
+                <p>색상: {{ item.colors|join:", " }} / 사이즈: {{ item.sizes|join:", " }}</p>
+                <p>판매 {{ item.sales_count }}, 조회 {{ item.view_count }}, 리뷰 {{ item.review_count }}</p>
+            </article>
+        {% empty %}
+            <p>검색 결과가 없습니다.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
