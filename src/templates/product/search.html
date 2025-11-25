@@ -4,33 +4,58 @@
 <section class="search-page">
     <h1>상품 검색</h1>
     <form method="get" class="search-form">
-        <input type="text" name="q" value="{{ q }}" placeholder="검색어 입력" />
+        <input type="search" name="q" value="{{ q }}" placeholder="검색어 입력" />
+
         <input type="text" name="category" value="{{ category }}" placeholder="카테고리 slug" />
         <input type="text" name="min_price" value="{{ min_price }}" placeholder="최소 가격" />
         <input type="text" name="max_price" value="{{ max_price }}" placeholder="최대 가격" />
+
+        <label>색상(쉼표로 구분):
+            <input type="text" name="color" value="{{ colors|join:',' }}" placeholder="블랙,화이트" />
+        </label>
+        <label>사이즈(쉼표로 구분):
+            <input type="text" name="size" value="{{ sizes|join:',' }}" placeholder="S,M,L" />
+        </label>
+
         <select name="sort">
             <option value="created_at:desc" {% if sort == "created_at:desc" %}selected{% endif %}>신상품순</option>
-            <option value="sales_count:desc" {% if sort == "sales_count:desc" %}selected{% endif %}>인기(판매)순</option>
+            <option value="sales_count:desc" {% if sort == "sales_count:desc" %}selected{% endif %}>판매순</option>
             <option value="view_count:desc" {% if sort == "view_count:desc" %}selected{% endif %}>조회순</option>
             <option value="review_count:desc" {% if sort == "review_count:desc" %}selected{% endif %}>리뷰순</option>
             <option value="discount_rate:desc" {% if sort == "discount_rate:desc" %}selected{% endif %}>할인율순</option>
             <option value="price:asc" {% if sort == "price:asc" %}selected{% endif %}>낮은 가격순</option>
             <option value="price:desc" {% if sort == "price:desc" %}selected{% endif %}>높은 가격순</option>
         </select>
+
+        <input type="number" name="per_page" value="{{ per_page|default:24 }}" min="1" max="100" />
         <button type="submit">검색</button>
     </form>
-    <p>{{ nb_hits }}건 검색됨</p>
+
+    <p>{{ nb_hits }}건 / 처리 {{ processing_ms }}ms</p>
+
     <div class="search-results">
-        {% for item in results %}
-            <article class="search-card">
-                <h2>{{ item.name }}</h2>
-                <p>{{ item.category }} | ₩{{ item.price }}{% if item.discount_price %} → ₩{{ item.discount_price }}{% endif %}</p>
-                <p>색상: {{ item.colors|join:", " }} / 사이즈: {{ item.sizes|join:", " }}</p>
-                <p>판매 {{ item.sales_count }}, 조회 {{ item.view_count }}, 리뷰 {{ item.review_count }}</p>
-            </article>
-        {% empty %}
-            <p>검색 결과가 없습니다.</p>
-        {% endfor %}
+    {% for item in results %}
+        <article class="search-card">
+        <h2><a href="{% url 'product:detail' item.id %}">{{ item.name }}</a></h2>
+        <p>{{ item.category }} | ₩{{ item.price }}{% if item.discount_price %} → ₩{{ item.discount_price }}{% endif %}</p>
+        <p>색상: {{ item.colors|join:", " }} / 사이즈: {{ item.sizes|join:", " }}</p>
+        <p>판매 {{ item.sales_count }}, 조회 {{ item.view_count }}, 리뷰 {{ item.review_count }}</p>
+        </article>
+    {% empty %}
+        <p>검색 결과가 없습니다.</p>
+    {% endfor %}
     </div>
+
+    {% if page_obj %}
+    <nav class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?{{ base_querystring }}{% if base_querystring %}&{% endif %}page={{ page_obj.previous_page_number }}&per_page={{ per_page }}">이전</a>
+    {% endif %}
+    <span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}
+        <a href="?{{ base_querystring }}{% if base_querystring %}&{% endif %}page={{ page_obj.next_page_number }}&per_page={{ per_page }}">다음</a>
+    {% endif %}
+    </nav>
+    {% endif %}
 </section>
 {% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<section class="product-detail">
+    <div class="product-detail__gallery">
+        {% if images %}
+            <div class="product-detail__main-image">
+                <img src="{{ images.0.image.url }}" alt="{{ images.0.alt_text|default:product.name }}">
+            </div>
+            <div class="product-detail__thumbs">
+                {% for img in images %}
+                    <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:product.name }}" class="{% if forloop.first %}is-active{% endif %}">
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="product-detail__placeholder">이미지가 없습니다.</div>
+        {% endif %}
+    </div>
+
+    <div class="product-detail__info">
+        <h1 class="product-detail__title">{{ product.name }}</h1>
+        <p class="product-detail__sku">SKU: {{ product.sku }}</p>
+        <p class="product-detail__price">
+            {% if product.discount_price %}
+                <span class="product-detail__price--origin">₩{{ product.price }}</span>
+                <span class="product-detail__price--sale">₩{{ product.discount_price }}</span>
+                <span class="product-detail__badge">-{{ product.discount_rate|floatformat:0 }}%</span>
+            {% else %}
+                <span class="product-detail__price--sale">₩{{ product.price }}</span>
+            {% endif %}
+        </p>
+        <p class="product-detail__meta">
+            <span>카테고리: {{ product.category.name }}</span>
+            <span>재고: {{ product.stock }}개</span>
+        </p>
+
+        {% if options %}
+            <div class="product-detail__options">
+                <label>색상/사이즈 선택</label>
+                <select name="option">
+                    {% for opt in options %}
+                        <option value="{{ opt.id }}">
+                            {{ opt.color }} / {{ opt.size }} (재고 {{ opt.stock }}개)
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        {% endif %}
+
+        <div class="product-detail__actions">
+            <button type="button" class="btn btn--primary">바로 구매하기</button>
+        </div>
+
+        <div class="product-detail__desc">
+            <h2>상품 설명</h2>
+            <p>{{ product.description|linebreaksbr }}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

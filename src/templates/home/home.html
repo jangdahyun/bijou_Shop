@@ -61,7 +61,7 @@
 
             <div class="product-grid" data-grid="recommend">
                 {% for product in popular_products %}
-                <article class="product-card">
+                <article class="product-card" data-product-url="{% url 'product:detail' product.id %}">
                     <div class="product-card__badge">
                         {% if product.discount_price %}
                             SALE

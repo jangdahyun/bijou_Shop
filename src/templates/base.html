@@ -21,9 +21,18 @@
                 {% endwith %}
             </nav>
             <div class="site-actions">
-                <button class="site-action" type="button" aria-label="Search">
-                    <span class="icon icon--search"></span>
-                </button>
+                <form class="site-search" method="get" action="{% url 'product:search' %}">
+                    <input
+                        type="search"
+                        name="q"
+                        placeholder="검색어를 입력하세요"
+                        aria-label="상품 검색"
+                        value="{{ request.GET.q|default_if_none:'' }}"
+                    />
+                    <button class="site-action" type="submit" aria-label="Search">
+                        <span class="icon icon--search"></span>
+                    </button>
+                </form>
                 <button class="site-action" type="button" aria-label="Cart">
                     <span class="icon icon--bag"></span>
                 </button>

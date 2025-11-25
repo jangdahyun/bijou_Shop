@@ -77,4 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
             // NOTE: 실제 데이터 연동 시 이 자리에서 Ajax/Fetch 등으로 콘텐츠를 교체하세요.
         });
     });
+
+    // Product card click → navigate to detail page
+    const cards = Array.from(document.querySelectorAll(".product-card[data-product-url]"));
+    console.log(cards);
+    console.log("test");
+    cards.forEach((card) => {
+        const url = card.dataset.productUrl;
+        if (!url) return;
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => {
+            console.log("123");
+            window.location.href = url;
+        });
+    });
 });
