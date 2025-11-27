@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.querySelector(".hero__control--next");
     let current = 0;
     let autoplayTimer;
+    console.log("123");
 
     // Activate a specific slide + indicator
     const activateSlide = (index) => {

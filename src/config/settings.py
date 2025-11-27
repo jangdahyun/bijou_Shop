@@ -248,3 +248,11 @@ CACHES = {
 MEILI_URL = env("MEILI_URL", default="")
 MEILI_API_KEY = env("MEILI_API_KEY", default="")
 MEILI_PRODUCT_INDEX = env("MEILI_PRODUCT_INDEX", default="products")
+
+
+
+#------------------토스 결제--------------------#
+TOSS_CLIENT_KEY = env("TOSS_CLIENT_KEY", default="")
+TOSS_SECRET_KEY = env("TOSS_SECRET_KEY", default="")
+TOSS_SUCCESS_URL = env("TOSS_SUCCESS_URL", default="http://127.0.0.1:8000/orders/success/")
+TOSS_FAIL_URL = env("TOSS_FAIL_URL", default="http://127.0.0.1:8000/orders/fail/")
