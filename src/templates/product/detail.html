@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{ product.name }}{% endblock %}
 {% block content %}
 <section class="product-detail">
@@ -36,8 +37,8 @@
 
         {% if options %}
             <div class="product-detail__options">
-                <label>색상/사이즈 선택</label>
-                <select name="option">
+                <label for="product-option">색상/사이즈 선택</label>
+                <select name="option" id="product-option">
                     {% for opt in options %}
                         <option value="{{ opt.id }}">
                             {{ opt.color }} / {{ opt.size }} (재고 {{ opt.stock }}개)
@@ -48,7 +49,15 @@
         {% endif %}
 
         <div class="product-detail__actions">
-            <button type="button" class="btn btn--primary">바로 구매하기</button>
+            <button
+                type="button"
+                class="btn btn--primary"
+                id="btn-buy-now"
+                data-product-id="{{ product.id }}"
+                data-default-qty="1"
+            >바로 구매하기</button>
+            <div id="payment-methods" class="payment-methods"></div>
+            <div id="payment-agreement" class="payment-agreement"></div>
         </div>
 
         <div class="product-detail__desc">
@@ -57,4 +66,14 @@
         </div>
     </div>
 </section>
+{% block extra_js %}
+<script src="https://js.tosspayments.com/v1"></script>
+<script>
+    window.TOSS_CLIENT_KEY = "{{ toss_client_key }}";
+    window.ORDER_PREPARE_URL = "{{ order_prepare_url }}";
+    console.log("TOSS_CLIENT_KEY:", window.TOSS_CLIENT_KEY);
+    console.log("ORDER_PREPARE_URL:", window.ORDER_PREPARE_URL);
+</script>
+<script src="{% static 'product/detail.js' %}"></script>
+{% endblock extra_js %}
 {% endblock %}

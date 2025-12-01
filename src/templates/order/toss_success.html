@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}결제 성공{% endblock %}
+{% block content %}
+<section class="payment-result">
+    <h1>결제 성공</h1>
+    <p>주문번호: {{ order.order_number }}</p>
+    <p>결제금액: {{ payment.totalAmount }}원</p>
+    <p>결제수단: {{ payment.method }}</p>
+    <p>승인번호: {{ payment.paymentKey }}</p>
+    <a href="/">홈으로 돌아가기</a>
+</section>
+{% endblock %}

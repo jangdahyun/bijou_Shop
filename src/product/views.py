@@ -1,13 +1,13 @@
+from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage 
 # Paginator 리스트 or queryset를 페이지 단위로 나누기 위해 사용
 #EmptyPage 페이지 번호가 유효하지 않을 때 발생하는 예외
-from django.views.generic import TemplateView
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404
-from common.meili import get_product_index
-
-from django.http import JsonResponse
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import TemplateView
+
 from common.meili import get_product_index
 from product.models import Product
 
@@ -155,5 +155,7 @@ class ProductDetailView(TemplateView):
             product=product,
             images=images,
             options=options,
+            toss_client_key=getattr(settings, "TOSS_CLIENT_KEY", ""),
+            order_prepare_url=reverse_lazy("order:prepare"),
         )
         return ctx

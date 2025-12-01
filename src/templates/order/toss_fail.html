@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}결제 실패{% endblock %}
+{% block content %}
+<section class="payment-result">
+    <h1>결제 실패</h1>
+    <p>코드: {{ code }}</p>
+    <p>메시지: {{ message }}</p>
+    <a href="/">홈으로 돌아가기</a>
+</section>
+{% endblock %}
