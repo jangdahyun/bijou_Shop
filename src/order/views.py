@@ -12,6 +12,8 @@ from product.models import Product, ProductOption
 from order.models import Order, OrderItem
 from delivery.models import Delivery
 
+from django.db import transaction
+
 def encode_key(secret_key: str) -> str:
     """Base64로 인코딩된 Basic Auth 토큰 생성 (secret:)"""
     secret_key_bytes = f"{secret_key}:".encode("ascii")
@@ -42,7 +44,8 @@ class PrepareOrderView(View):
 
         price = product.sale_price
         order_name = f"{product.name}{' - ' + option.size if option else ''}"
-        order_number = uuid.uuid4().hex[:16]
+        amount = price * qty
+        user = request.user if request.user.is_authenticated else None
 
         # 임시 배송지: 로그인 유저가 있으면 그 유저, 없으면 첫 번째 유저로 생성 (테스트용)
         delivery_user = request.user if request.user.is_authenticated else get_user_model().objects.first()
@@ -58,36 +61,52 @@ class PrepareOrderView(View):
             is_default=False,
         )
 
-        order = Order.objects.create(
-            order_number=order_number,
-            user=request.user if request.user.is_authenticated else None,
-            delivery=delivery,
-            shipping_name="테스트",
-            shipping_phone="010-0000-0000",
-            shipping_postcode="00000",
-            shipping_address1="테스트 주소",
-            shipping_address2="",
-            payment_amount=price * qty,
-            status=Order.Status.PENDING,
-            payment_method=Order.PaymentMethod.CARD,
-        )
+        with transaction.atomic():
+            order = None
+            if user:
+                order = (
+                    Order.objects.select_for_update()
+                    .filter(user=user, status=Order.Status.PENDING)
+                    .first()
+                )
+            if not order:
+                order_number = uuid.uuid4().hex[:16]
+                order = Order.objects.create(
+                    order_number=order_number,
+                    user=user,
+                    delivery=delivery,
+                    shipping_name="테스트",
+                    shipping_phone="010-0000-0000",
+                    shipping_postcode="00000",
+                    shipping_address1="테스트 주소",
+                    shipping_address2="",
+                    payment_amount=amount,
+                    status=Order.Status.PENDING,
+                    payment_method=Order.PaymentMethod.CARD,
+                )
+            else:
+                # 재사용 시 금액/배송만 갱신하고 기존 아이템을 비움
+                order.payment_amount = amount
+                order.delivery = delivery
+                order.save(update_fields=["payment_amount", "delivery", "updated_at"])
+                OrderItem.objects.filter(order=order).delete()
 
-        OrderItem.objects.create(
-            order=order,
-            product=product,
-            product_name=product.name,
-            sku=product.sku,
-            product_option=option,
-            quantity=qty,
-            total_price=price * qty,
-        )
-
+            OrderItem.objects.create(
+                order=order,
+                product=product,
+                product_name=product.name,
+                sku=product.sku,
+                product_option=option,
+                quantity=qty,
+                total_price=amount,
+            )
+            
         return JsonResponse(
             {
                 "orderId": order.order_number,
                 "orderName": order_name,
-                "amount": float(price * qty),
-                "customerName": request.user.username if request.user.is_authenticated else "게스트",
+                "amount": float(amount),
+                "customerName": user.username if user else "게스트",
                 "successUrl": settings.TOSS_SUCCESS_URL,
                 "failUrl": settings.TOSS_FAIL_URL,
             }
